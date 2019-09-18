@@ -11,6 +11,7 @@
     <modules>
         <module>JUC</module>
         <module>CurrentJavaDemo</module>
+        <module>jcipSrcCode</module>
     </modules>
 
 
