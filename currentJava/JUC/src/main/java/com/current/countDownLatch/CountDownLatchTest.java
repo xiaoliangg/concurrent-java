@@ -1,4 +1,4 @@
-package com.current;
+package com.current.countDownLatch;
 
 import java.util.concurrent.CountDownLatch;
 
