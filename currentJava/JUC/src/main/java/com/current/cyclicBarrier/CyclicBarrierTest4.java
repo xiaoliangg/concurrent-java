@@ -5,7 +5,7 @@ import java.util.concurrent.CyclicBarrier;
 
 /**
  * CyclicBarrier 是可重用的，而CountDownLatch无法进行重复使用
- *
+ * https://www.cnblogs.com/dolphin0520/p/3920397.html
  */
 public class CyclicBarrierTest4 {
     public static void main(String[] args) {

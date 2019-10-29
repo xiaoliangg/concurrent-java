@@ -8,6 +8,7 @@ import java.util.concurrent.CyclicBarrier;
  * 如果说想在所有线程写入操作完之后，进行额外的其他操作可以为CyclicBarrier提供Runnable参数
  *
  * 所有线程执行完毕后，随机选择其中某一个线程执行指定任务
+ * https://www.cnblogs.com/dolphin0520/p/3920397.html
  */
 public class CyclicBarrierTest2 {
     public static void main(String[] args) {

@@ -9,6 +9,7 @@ import java.util.concurrent.TimeoutException;
 /**
  * await指定时间的效果
  * 指定超时时间时，到达时间会抛异常并执行后续任务
+ * https://www.cnblogs.com/dolphin0520/p/3920397.html
  */
 public class CyclicBarrierTest3 {
     public static void main(String[] args) {
