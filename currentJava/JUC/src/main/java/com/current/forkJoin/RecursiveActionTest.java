@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * https://www.ibm.com/developerworks/cn/java/j-lo-forkjoin/index.html#figure001
  * 清单3
+ * RecursiveAction 是 ForkJoinTask 的一个子类，它代表了一类最简单的 ForkJoinTask：不需要返回值，当子任务都执行完毕之后，不需要进行中间结果的组合。如果我们从 RecursiveAction 开始继承，那么我们只需要重载 protected void compute() 方法
  */
 class SortTask extends RecursiveAction {
     final long[] array;

@@ -41,16 +41,22 @@ public class CyclicBarrierTest3 {
             try {
                 Thread.sleep(5000);      //以睡眠来模拟写入数据操作
                 System.out.println("线程"+Thread.currentThread().getName()+"写入数据完毕，等待其他线程写入完毕");
-                try {
+//                try {
                     cyclicBarrier.await(2000, TimeUnit.MILLISECONDS);
-                } catch (TimeoutException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
+//                } catch (TimeoutException e) {
+//                    // TODO Auto-generated catch block
+//                    e.printStackTrace();
+//                }
             } catch (InterruptedException e) {
+                System.out.print(Thread.currentThread().getName());
                 e.printStackTrace();
             }catch(BrokenBarrierException e){
+                System.out.print(Thread.currentThread().getName());
                 e.printStackTrace();
+            } catch (TimeoutException e) {
+                System.out.print(Thread.currentThread().getName());
+                e.printStackTrace();
+
             }
             System.out.println(Thread.currentThread().getName()+"所有线程写入完毕，继续处理其他任务...");
         }
