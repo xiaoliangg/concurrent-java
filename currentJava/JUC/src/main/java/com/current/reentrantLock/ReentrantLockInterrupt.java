@@ -83,6 +83,7 @@ public class ReentrantLockInterrupt extends Thread {
                         if (deadlockedThreadIds != null) {
                             ThreadInfo[] threadInfos = mbean.getThreadInfo(deadlockedThreadIds);
                             for (Thread t : Thread.getAllStackTraces().keySet()) {
+//                                StackTraceElement[] ste = Thread.getAllStackTraces().get(t);
                                 for (int i = 0; i < threadInfos.length; i++) {
                                     if (t.getId() == threadInfos[i].getThreadId()) {
                                         System.out.println("deadLockName:" + t.getName());

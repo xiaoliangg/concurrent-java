@@ -4,7 +4,6 @@ package com.current.jcip.chapter04.sect040305;
 import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 /**
  * 072_4.3.5_srcCode_！！？_示例:发布状态的车辆追踪器
