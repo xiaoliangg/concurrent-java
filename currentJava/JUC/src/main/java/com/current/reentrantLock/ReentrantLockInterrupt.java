@@ -10,14 +10,14 @@ import java.util.concurrent.locks.ReentrantLock;
  * 构造一个死锁的例子，然后用中断来处理死锁
  * https://www.jianshu.com/p/155260c8af6c
  */
-public class LockInterrupt extends Thread {
+public class ReentrantLockInterrupt extends Thread {
 
     public static ReentrantLock lock1 = new ReentrantLock();
     public static ReentrantLock lock2 = new ReentrantLock();
 
     int lock;
 
-    public LockInterrupt(int lock, String name) {
+    public ReentrantLockInterrupt(int lock, String name) {
 
         super(name);
         this.lock = lock;
@@ -57,13 +57,13 @@ public class LockInterrupt extends Thread {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        LockInterrupt t1 = new LockInterrupt(1, "LockInterrupt1");
-        LockInterrupt t2 = new LockInterrupt(2, "LockInterrupt2");
+        ReentrantLockInterrupt t1 = new ReentrantLockInterrupt(1, "LockInterrupt1");
+        ReentrantLockInterrupt t2 = new ReentrantLockInterrupt(2, "LockInterrupt2");
         t1.start();
         t2.start();
         Thread.sleep(1000);
 
-        //DeadlockChecker.check();
+        DeadlockChecker.check();
     }
 
 
@@ -85,7 +85,7 @@ public class LockInterrupt extends Thread {
                             for (Thread t : Thread.getAllStackTraces().keySet()) {
                                 for (int i = 0; i < threadInfos.length; i++) {
                                     if (t.getId() == threadInfos[i].getThreadId()) {
-                                        System.out.println(t.getName());
+                                        System.out.println("deadLockName:" + t.getName());
                                         t.interrupt();
                                     }
                                 }
