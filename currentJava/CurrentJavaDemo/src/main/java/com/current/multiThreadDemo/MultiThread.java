@@ -34,7 +34,7 @@ public abstract class MultiThread<H,T>{
 
     /**
      *
-     * @return 获取每个线程处理结速的数组
+     * @return 获取每个线程处理结果的数组
      * @throws InterruptedException
      * @throws ExecutionException
      */

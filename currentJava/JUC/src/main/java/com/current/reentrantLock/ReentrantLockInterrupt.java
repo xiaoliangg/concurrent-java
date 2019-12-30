@@ -45,6 +45,7 @@ public class ReentrantLockInterrupt extends Thread {
             }
         } catch (Exception e) {
             // TODO: handle exception
+            e.printStackTrace();
         } finally {
             if (lock1.isHeldByCurrentThread()) {
                 lock1.unlock();

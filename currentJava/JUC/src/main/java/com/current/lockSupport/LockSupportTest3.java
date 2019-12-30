@@ -3,7 +3,7 @@ package com.current.lockSupport;
 import java.util.concurrent.locks.LockSupport;
 
 /**
- * 如果因为调用park而阻塞的话，能够响应中断请求(中断状态被设置成true)，但是不会抛出InterruptedException。
+ * 如果因为调用park而阻塞的话，能够响应中断请求(1.中断状态被设置成true,2.被park的线程可以继续向下执行)，但是不会抛出InterruptedException。
  * https://blog.csdn.net/aitangyong/article/details/38373137
  */
 public class LockSupportTest3 {
@@ -43,7 +43,7 @@ public class LockSupportTest3 {
 
         t.start();
 
-        Thread.sleep(2000);
+        Thread.sleep(8000);
         // 中断线程
         t.interrupt();
         System.out.println("main over");

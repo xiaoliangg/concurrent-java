@@ -21,6 +21,7 @@ public class TryLockTest extends Thread {
     public void run() {
         try {
             if (lock.tryLock(5, TimeUnit.SECONDS)) {
+                System.out.println("开始睡眠6s:" + this.getName());
                 Thread.sleep(6000);
             } else {
                 System.out.println(this.getName() + " get lock failed");
