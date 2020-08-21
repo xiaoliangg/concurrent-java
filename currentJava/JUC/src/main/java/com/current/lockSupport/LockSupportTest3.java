@@ -36,7 +36,7 @@ public class LockSupportTest3 {
 //                } catch (InterruptedException e) {
 //                    e.printStackTrace();
 //                }
-                System.out.println("thread over." + Thread.currentThread().isInterrupted());
+                System.out.println("thread over:" + Thread.currentThread().isInterrupted());
 
             }
         });
